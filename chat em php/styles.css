@@ -1,0 +1,265 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #00a884, #128c7e);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Janela do Chat */
+.chat-window {
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+/* Cabeçalho do Chat */
+.chat-header {
+    background-color: #128c7e;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+
+#nickname {
+    font-weight: bold;
+}
+
+/* Botão de Configuração */
+.config-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.config-button:hover {
+    transform: rotate(90deg);
+}
+
+/* Área de Mensagens */
+.message-area {
+    padding: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #e5ddd5;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+    position: relative;
+    word-wrap: break-word;
+}
+
+/* Mensagens do usuário atual (à direita) */
+.message.user {
+    background-color: #dcf8c6; /* Cor de fundo para mensagens do usuário atual */
+    align-self: flex-end; /* Alinha à direita */
+    margin-left: auto; /* Empurra para a direita */
+    border-radius: 8px 8px 0 8px; /* Borda arredondada */
+}
+
+/* Mensagens de outros usuários (à esquerda) */
+.message.other {
+    background-color: #ffffff; /* Cor de fundo para mensagens de outros usuários */
+    align-self: flex-start; /* Alinha à esquerda */
+    margin-right: auto; /* Empurra para a esquerda */
+    border-radius: 8px 8px 8px 0; /* Borda arredondada */
+}
+
+
+.sender {
+    font-weight: bold;
+    color: #128c7e;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.timestamp {
+    font-size: 0.7em;
+    color: #666;
+    margin-left: 10px;
+    float: right;
+}
+
+/* Área de Input */
+.input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+}
+
+input[type='text'] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.config-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.config-button:hover {
+    transform: rotate(45deg);
+    color: #ffffff; /* Altera a cor do ícone ao passar o mouse */
+}
+
+.config-button.hidden {
+    display: none;
+}
+
+/* Botão de Atualização */
+.refresh-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-right: 10px; /* Espaçamento entre os botões */
+    transition: transform 0.3s ease;
+}
+
+.refresh-button:hover {
+    transform: rotate(45deg);
+}
+
+.clear-button {
+    background: none;
+    border: none;
+    color: rgb(109, 109, 109);
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-right: 10px; /* Espaçamento entre os botões */
+    transition: transform 0.3s ease;
+}
+
+.clear-button:hover {
+    color: #ff4d4d; /* Cor vermelha ao passar o mouse */
+}
+
+#send {
+    padding: 10px 20px;
+    background-color: #00a884;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+#send:hover {
+    background-color: #128c7e; /* Cor mais escura ao passar o mouse */
+}
+
+#send i {
+    font-size: 1em;
+}
+
+
+
+/* Modal de Configuração */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    color: #128c7e;
+}
+
+.modal-content input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #00a884;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.modal-content button:hover {
+    background-color: #075e54;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    color: #666;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
